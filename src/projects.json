@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Dictionary web app",
+      "technologies": ["React", "TypeScript", "Redux", "API"],
+      "preview": "https://loremdictionary.vercel.app/",
+      "code": "https://github.com/semperprimum/fem-dictionary-app"
+    },
+    {
+      "id": 2,
+      "name": "Password generator",
+      "technologies": ["React", "TypeScript"],
+      "preview": "https://fem-password-generator-amber.vercel.app/",
+      "code": "https://github.com/semperprimum/fem-password-generator"
+    },
+    {
+      "id": 3,
+      "name": "Todo app",
+      "technologies": ["React", "TypeScript", "Redux"],
+      "preview": "https://fem-todo-app-tan.vercel.app/",
+      "code": "https://github.com/semperprimum/fem-todo-app"
+    },
+    {
+      "id": 4,
+      "name": "GitHub user search",
+      "technologies": ["React", "JavaScript", "API"],
+      "preview": "https://devfinderapp.vercel.app/",
+      "code": "https://github.com/semperprimum/fem-github-user-search"
+    }
+  ]
+}
