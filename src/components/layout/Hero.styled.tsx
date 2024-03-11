@@ -24,7 +24,7 @@ export const Hero = () => {
 };
 
 const HeroWrapper = styled.section`
-  min-height: 100dvh;
+  min-height: 100vh;
   display: grid;
   place-content: center;
 `;
