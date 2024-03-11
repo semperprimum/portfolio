@@ -3,7 +3,7 @@ import { Heading } from "../..";
 
 export const About = () => {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="about">
       <Heading>About</Heading>
       <Paragraph>
         I'm Bogdan Kim, an ambitious 18-year-old Front-End Developer based in

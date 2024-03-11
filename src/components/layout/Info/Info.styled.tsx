@@ -1,16 +1,21 @@
 import styled from "styled-components";
 import { About } from "./About.styled";
-import { AppContentWrapper } from "../..";
+import { AppContentWrapper, Footer } from "../..";
 import { Projects } from "./Projects.styled";
+import { Technologies } from "./Technologies.styled";
 
 export const Info = () => {
   return (
-    <InfoWrapper className="snap-section">
+    <InfoWrapper>
       <AppContentWrapper>
         <About />
 
         <Projects />
+
+        <Technologies />
       </AppContentWrapper>
+
+      <Footer />
     </InfoWrapper>
   );
 };

@@ -3,7 +3,7 @@ import { AppContentWrapper, Button } from "..";
 
 export const Hero = () => {
   return (
-    <AppContentWrapper className="snap-section">
+    <AppContentWrapper>
       <HeroWrapper>
         <Role>Front-End developer</Role>
         <Name>Bogdan Kim</Name>

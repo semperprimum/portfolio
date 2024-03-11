@@ -9,6 +9,7 @@ export const lightTheme = {
   textMuted: "#94A3B8",
   interactive: "#CBD5E1",
   section: "#F1F5F9",
+  sectionBorder: "#E2E8F0",
   background: "#F8FAFC",
 };
 
@@ -22,6 +23,7 @@ export const darkTheme = {
   textSecondary: "#94A3B8",
   textMuted: "#64748B",
   interactive: "#1E293B",
-  section: "#94A3B8",
+  section: "#0F172A",
+  sectionBorder: "#1E293B",
   background: "#020617",
 };

@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { AppContentWrapper, Switch } from "..";
 import { FaGithub } from "react-icons/fa";
 import { SiFrontendmentor } from "react-icons/si";
 import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
 
-export const Header = () => {
+export const Header: React.FC<{ header: boolean }> = (props) => {
   const context = useTheme();
   const [isDarkMode, setIsDarkMode] = useState(
     () => context?.currentTheme === "dark"
@@ -17,7 +17,7 @@ export const Header = () => {
   };
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper $header={props.header}>
       <AppContentWrapper>
         <Logo>bogdankim</Logo>
 
@@ -62,19 +62,23 @@ export const Header = () => {
   );
 };
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.div<{ $header: boolean }>`
   --vertical-spacing: 0.5rem;
   text-align: center;
 
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  ${(props) =>
+    props.$header &&
+    css`
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
 
-  & > div {
-    // override calc(100% - 3rem)
-    width: 100%;
-  }
+      & > div {
+        // override calc(100% - 3rem)
+        width: 100%;
+      }
+    `}
 `;
 
 const Logo = styled.h1`

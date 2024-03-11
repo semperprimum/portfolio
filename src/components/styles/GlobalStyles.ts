@@ -32,12 +32,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        scroll-snap-type: y mandatory;
         color-scheme: dark light;
-    }
-
-    .snap-section {
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
     }
 `;

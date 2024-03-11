@@ -4,7 +4,7 @@ import projects from "../../../projects.json";
 
 export const Projects = () => {
   return (
-    <ProjectsWrapper>
+    <ProjectsWrapper id="projects">
       <Heading>Projects</Heading>
       <Paragraph>
         I've included some of my projects - take a peek! I'm excited to connect

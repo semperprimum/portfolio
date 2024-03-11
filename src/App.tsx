@@ -6,7 +6,7 @@ const App = () => {
       <Reset />
       <GlobalStyles />
 
-      <Header />
+      <Header header />
 
       <Hero />
 
