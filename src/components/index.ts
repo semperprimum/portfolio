@@ -7,3 +7,4 @@ export { Hero } from "./layout/Hero.styled.tsx";
 export { Button } from "./Button.styled.tsx";
 export { Info } from "./layout/Info/Info.styled.tsx";
 export { Heading } from "./Heading.styled.ts";
+export { ProjectCard } from "./ProjectCard.tsx";
