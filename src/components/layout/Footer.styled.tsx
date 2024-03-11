@@ -30,9 +30,10 @@ export const Footer = () => {
         () => {
           console.log("SUCCESS!");
           setInputField({ from_name: "", email: "", message: "" });
+          alert("Email sent successfully!");
         },
-        (error) => {
-          console.log(error);
+        () => {
+          alert("There was an error sending the email");
         }
       );
   };
