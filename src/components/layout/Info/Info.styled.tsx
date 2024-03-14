@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { About } from "./About.styled";
-import { AppContentWrapper, Footer } from "../..";
+import { AppContentWrapper } from "../..";
 import { Projects } from "./Projects.styled";
 import { Technologies } from "./Technologies.styled";
 
@@ -14,8 +14,6 @@ export const Info = () => {
 
         <Technologies />
       </AppContentWrapper>
-
-      <Footer />
     </InfoWrapper>
   );
 };

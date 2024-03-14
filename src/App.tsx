@@ -1,4 +1,4 @@
-import { GlobalStyles, Header, Hero, Info, Reset } from "./components";
+import { Footer, GlobalStyles, Header, Hero, Info, Reset } from "./components";
 
 const App = () => {
   return (
@@ -6,11 +6,17 @@ const App = () => {
       <Reset />
       <GlobalStyles />
 
-      <Header header />
+      <header>
+        <Header header />
+      </header>
 
-      <Hero />
+      <main>
+        <Hero />
 
-      <Info />
+        <Info />
+      </main>
+
+      <Footer />
     </>
   );
 };
