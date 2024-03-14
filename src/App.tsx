@@ -7,7 +7,10 @@ const App = () => {
       <GlobalStyles />
 
       <header>
-        <Header header />
+        <Header
+          navLabel="header nav"
+          header
+        />
       </header>
 
       <main>

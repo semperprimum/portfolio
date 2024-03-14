@@ -103,7 +103,10 @@ export const Footer = () => {
             </Button>
           </Form>
         </AppContentWrapper>
-        <Header header={false} />
+        <Header
+          navLabel="footer nav"
+          header={false}
+        />
       </FooterWrapper>
     </>
   );

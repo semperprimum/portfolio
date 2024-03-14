@@ -63,7 +63,9 @@ export const Technologies = () => {
             variants={child}
             key={index}
           >
-            <TechnologyIconWrapper>{technology.icon}</TechnologyIconWrapper>
+            <TechnologyIconWrapper aria-hidden="true">
+              {technology.icon}
+            </TechnologyIconWrapper>
             {technology.name}
           </Technology>
         ))}

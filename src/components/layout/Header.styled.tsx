@@ -6,6 +6,7 @@ import { useTheme } from "../../context/ThemeContext";
 
 interface HeaderProps {
   header: boolean;
+  navLabel: string;
 }
 
 export const Header: React.FC<HeaderProps> = (props) => {
@@ -16,7 +17,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
       <AppContentWrapper>
         <Logo>bogdankim</Logo>
 
-        <Nav>
+        <Nav aria-label={props.navLabel}>
           <ul aria-label="navigation">
             <li>
               <a href="#about">
@@ -37,14 +38,20 @@ export const Header: React.FC<HeaderProps> = (props) => {
 
           <ul>
             <li>
-              <a href="https://github.com/semperprimum">
+              <a
+                aria-label="github"
+                href="https://github.com/semperprimum"
+              >
                 <SvgWrapper aria-hidden="true">
                   <FaGithub />
                 </SvgWrapper>
               </a>
             </li>
             <li>
-              <a href="https://www.frontendmentor.io/profile/semperprimum">
+              <a
+                aria-label="frontend mentor"
+                href="https://www.frontendmentor.io/profile/semperprimum"
+              >
                 <SvgWrapper aria-hidden="true">
                   <SiFrontendmentor />
                 </SvgWrapper>
