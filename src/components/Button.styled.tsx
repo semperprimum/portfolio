@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Button = styled.button<{ $secondary?: boolean }>`
+export const Button = styled(motion.a)<{ $secondary?: boolean }>`
   margin: 0;
   padding: 0;
   border: none;
@@ -11,4 +12,14 @@ export const Button = styled.button<{ $secondary?: boolean }>`
   font-size: 1rem;
   border-radius: 0.875rem;
   padding: 0.625rem 1rem;
+
+  @media only screen and (min-width: 48em) {
+    padding: 0.875rem 1.25rem;
+    cursor: pointer;
+    transition: filter 150ms ease;
+
+    &:hover {
+      filter: brightness(1.25);
+    }
+  }
 `;

@@ -3,18 +3,13 @@ import { AppContentWrapper, Switch } from "..";
 import { FaGithub } from "react-icons/fa";
 import { SiFrontendmentor } from "react-icons/si";
 import { useTheme } from "../../context/ThemeContext";
-import { useState } from "react";
 
-export const Header: React.FC<{ header: boolean }> = (props) => {
-  const context = useTheme();
-  const [isDarkMode, setIsDarkMode] = useState(
-    () => context?.currentTheme === "dark"
-  );
+interface HeaderProps {
+  header: boolean;
+}
 
-  const toggleTheme = () => {
-    context?.toggleTheme();
-    setIsDarkMode((prev) => !prev);
-  };
+export const Header: React.FC<HeaderProps> = (props) => {
+  const themeContext = useTheme();
 
   return (
     <HeaderWrapper $header={props.header}>
@@ -24,13 +19,19 @@ export const Header: React.FC<{ header: boolean }> = (props) => {
         <Nav>
           <ul aria-label="navigation">
             <li>
-              <a href="#about">About</a>
+              <a href="#about">
+                <span>About</span>
+              </a>
             </li>
             <li>
-              <a href="#projects">Projects</a>
+              <a href="#projects">
+                <span>Projects</span>
+              </a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="#contact">
+                <span>Contact</span>
+              </a>
             </li>
           </ul>
 
@@ -51,8 +52,8 @@ export const Header: React.FC<{ header: boolean }> = (props) => {
             </li>
             <li>
               <Switch
-                onChange={toggleTheme}
-                checked={isDarkMode}
+                onChange={themeContext?.toggleTheme ?? (() => {})}
+                checked={themeContext?.currentTheme === "dark"}
               />
             </li>
           </ul>
@@ -69,22 +70,36 @@ const HeaderWrapper = styled.div<{ $header: boolean }>`
   ${(props) =>
     props.$header &&
     css`
-      position: absolute;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
+      @media only screen and (max-width: 48em) {
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
 
-      & > div {
-        // override calc(100% - 3rem)
-        width: 100%;
+        & > div {
+          // override calc(100% - 3rem)
+          width: 100%;
+        }
       }
     `}
+
+  @media only screen and (min-width: 48em) {
+    padding-block: 1rem;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 `;
 
 const Logo = styled.h1`
+  font-size: var(--fs-logo);
   font-family: var(--ff-accent);
   margin-bottom: var(--vertical-spacing);
   line-height: auto;
+  flex-basis: 1;
 `;
 
 const Nav = styled.nav`
@@ -99,6 +114,37 @@ const Nav = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+
+    a > :not(div) {
+      @media only screen and (min-width: 69.375em) {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: currentColor;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 150ms 100ms ease;
+        }
+
+        &:hover {
+          &::after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 48em) {
+    display: flex;
     gap: 2rem;
   }
 `;

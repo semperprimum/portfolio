@@ -3,6 +3,7 @@ import { SiTypescript, SiRedux, SiTailwindcss } from "react-icons/si";
 import { FaReact, FaSass } from "react-icons/fa";
 import { FiFramer } from "react-icons/fi";
 import { Heading } from "../..";
+import { motion } from "framer-motion";
 
 const technologies: { name: string; icon: React.ReactNode }[] = [
   {
@@ -32,12 +33,36 @@ const technologies: { name: string; icon: React.ReactNode }[] = [
 ];
 
 export const Technologies = () => {
+  const child = {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  const parent = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
     <TechnologiesWrapper>
       <Heading>Technologies</Heading>
-      <TechnologiesList>
+      <TechnologiesList
+        variants={parent}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
         {technologies.map((technology, index) => (
-          <Technology key={index}>
+          <Technology
+            variants={child}
+            key={index}
+          >
             <TechnologyIconWrapper>{technology.icon}</TechnologyIconWrapper>
             {technology.name}
           </Technology>
@@ -51,7 +76,7 @@ const TechnologiesWrapper = styled.div`
   margin-block: 2rem;
 `;
 
-const TechnologiesList = styled.ul`
+const TechnologiesList = styled(motion.ul)`
   list-style: none;
   padding: 0;
   margin: 0;
@@ -61,7 +86,7 @@ const TechnologiesList = styled.ul`
   gap: 1.5rem;
 `;
 
-const Technology = styled.li`
+const Technology = styled(motion.li)`
   display: flex;
   align-items: center;
   gap: 0.625rem;

@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Heading = styled.h2`
+export const Heading = styled(motion.h2)`
   font-family: var(--ff-accent);
   font-size: var(--fs-300);
 

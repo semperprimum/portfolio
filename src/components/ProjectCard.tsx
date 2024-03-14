@@ -1,6 +1,8 @@
 import { Cloudinary } from "@cloudinary/url-gen/index";
 import styled from "styled-components";
 import { Button } from ".";
+import { useMedia } from "../hooks/useMedia";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   project: {
@@ -11,6 +13,10 @@ interface ProjectCardProps {
     technologies: string[];
     image: string;
   };
+  variants: {
+    initial: { opacity: number; x: number };
+    animate: { opacity: number; x: number; transition: { duration: number } };
+  };
 }
 
 const cloudName = import.meta.env.VITE_CLOUD_NAME;
@@ -20,13 +26,33 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 
   const url = cld.image(props.project.image).toURL();
 
+  const isMobile = useMedia("(max-width: 69.375em)");
+
   return (
-    <ProjectCardWrapper>
+    <ProjectCardWrapper variants={props.variants}>
       <ImageWrapper>
         <Image
           src={url}
           alt={props.project.name}
         />
+
+        {!isMobile && (
+          <ButtonContainer>
+            <Button
+              as={"a"}
+              href={props.project.preview}
+            >
+              Live Preview
+            </Button>
+            <Button
+              $secondary
+              as={"a"}
+              href={props.project.code}
+            >
+              View Code
+            </Button>
+          </ButtonContainer>
+        )}
       </ImageWrapper>
 
       <ProjectName>{props.project.name}</ProjectName>
@@ -37,30 +63,61 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         ))}
       </TechnologyList>
 
-      <MobileButtons>
-        <Button
-          as={"a"}
-          href={props.project.preview}
-        >
-          Live Preview
-        </Button>
-        <Button
-          $secondary
-          as={"a"}
-          href={props.project.code}
-        >
-          View Code
-        </Button>
-      </MobileButtons>
+      {isMobile && (
+        <ButtonContainer>
+          <Button
+            as={"a"}
+            href={props.project.preview}
+          >
+            Live Preview
+          </Button>
+          <Button
+            $secondary
+            as={"a"}
+            href={props.project.code}
+          >
+            View Code
+          </Button>
+        </ButtonContainer>
+      )}
     </ProjectCardWrapper>
   );
 };
 
-const ProjectCardWrapper = styled.div``;
+const ProjectCardWrapper = styled(motion.div)``;
 
 const ImageWrapper = styled.div`
   width: 100%;
-  height: 15.625rem;
+  /* height: 15.625rem; */
+  aspect-ratio: 11 / 8;
+
+  @media only screen and (min-width: 48em) {
+    height: 25rem;
+    aspect-ratio: auto;
+  }
+
+  @media only screen and (min-width: 69.375em) {
+    position: relative;
+
+    &:hover {
+      &::before {
+        opacity: 0.8;
+      }
+
+      & > div {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: black;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+  }
 `;
 
 const Image = styled.img`
@@ -96,8 +153,26 @@ const Technology = styled.li`
   border-radius: 100vmax;
 `;
 
-const MobileButtons = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
   margin-top: 1rem;
   gap: 0.75rem;
+
+  @media only screen and (min-width: 69.375em) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: grid;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 200ms ease;
+
+    & > a {
+      display: block;
+      max-width: fit-content;
+      margin-inline: auto;
+    }
+  }
 `;

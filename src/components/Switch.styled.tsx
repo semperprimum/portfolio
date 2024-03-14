@@ -29,6 +29,15 @@ const SwitchWrapper = styled.label`
 
   width: 3.1875rem;
   height: 1.9375rem;
+
+  @media only screen and (min-width: 48em) {
+    cursor: pointer;
+    transition: filter 150ms ease;
+
+    &:hover {
+      filter: brightness(1.25);
+    }
+  }
 `;
 
 const SwitchInput = styled.input`

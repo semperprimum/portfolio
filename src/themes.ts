@@ -1,6 +1,6 @@
 export const lightTheme = {
   name: "light",
-  gradient: "0deg, #A855F7 20%, #0EA5E9 100%",
+  gradient: "0deg, #A855F7 0%, #0EA5E9 100%",
   accentPurple: "#A855F7",
   accentBlue: "#0EA5E9",
   button: "#007AFF",
@@ -15,7 +15,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   name: "dark",
-  gradient: "0deg, #A855F7 20%, #0EA5E9 100%",
+  gradient: "0deg, #A855F7 0%, #0EA5E9 100%",
   accentPurple: "#A855F7",
   accentBlue: "#0EA5E9",
   button: "#007AFF",
