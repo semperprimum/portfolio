@@ -34,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
 
         background-image: url(${ellipseBlue}), url(${ellipsePurple});
 
-        background-size: min(55.5rem, 180%), min(55.5rem, 180%);
+        background-size: min(50rem, 180%), min(50rem, 180%);
         background-position: top 3rem left -70vw, top -15rem right -70vw;
         background-repeat: no-repeat;
 
