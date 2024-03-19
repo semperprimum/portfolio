@@ -46,5 +46,6 @@ export const GlobalStyles = createGlobalStyle`
 
     html {
         color-scheme: dark light;
+        scroll-behavior: smooth;
     }
 `;
