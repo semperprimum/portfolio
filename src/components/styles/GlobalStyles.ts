@@ -34,18 +34,18 @@ export const GlobalStyles = createGlobalStyle`
 
         background-image: url(${ellipseBlue}), url(${ellipsePurple});
 
-        background-size: min(50rem, 180%), min(50rem, 180%);
+        background-size    : min(50rem, 180%),    min(50rem, 180%);
         background-position: top 3rem left -70vw, top -15rem right -70vw;
-        background-repeat: no-repeat;
+        background-repeat  : no-repeat;
 
         @media only screen and (min-width: 69.375em) {
-           background-size: 100rem, 100rem;
-           background-position: top -5rem left -30vw, top -30rem right -30vw; 
+           background-size    : 100rem,               100rem;
+           background-position: top -5rem left -30vw, top -30rem right -30vw;
         }
     }
 
     html {
-        color-scheme: dark light;
+        color-scheme   : dark light;
         scroll-behavior: smooth;
     }
 `;

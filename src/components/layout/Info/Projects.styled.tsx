@@ -32,7 +32,6 @@ export const Projects = () => {
       <Paragraph
         initial={child.initial}
         whileInView={child.animate}
-        transition={{ delay: 0.1 }}
         viewport={{ once: true }}
       >
         I've included some of my projects - take a peek! I'm excited to connect

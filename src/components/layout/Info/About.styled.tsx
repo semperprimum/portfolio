@@ -9,7 +9,7 @@ export const About = () => {
       whileInView={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, delay: 0.25 },
+        transition: { duration: 0.5 },
       }}
       viewport={{ once: true }}
       id="about"
