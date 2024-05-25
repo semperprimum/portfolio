@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SiTypescript, SiRedux, SiTailwindcss } from "react-icons/si";
-import { FaReact, FaSass } from "react-icons/fa";
+import { FaReact, FaSass, FaVuejs } from "react-icons/fa";
 import { FiFramer } from "react-icons/fi";
 import { Heading } from "../..";
 import { motion } from "framer-motion";
@@ -13,6 +13,10 @@ const technologies: { name: string; icon: React.ReactNode }[] = [
   {
     name: "React",
     icon: <FaReact style={{ color: "#7CC5D9" }} />,
+  },
+  {
+    name: "Vue.js",
+    icon: <FaVuejs style={{ color: "#42b883" }} />
   },
   {
     name: "Sass",
