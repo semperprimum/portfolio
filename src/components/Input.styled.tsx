@@ -7,6 +7,7 @@ export const Input = styled.input`
   padding: 0.875rem 1.25rem;
   border-radius: 0.875rem;
   caret-color: ${(props) => props.theme.button};
+  resize: none;
 
   &::placeholder {
     color: ${(props) => props.theme.textMuted};
