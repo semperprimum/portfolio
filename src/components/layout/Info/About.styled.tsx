@@ -17,15 +17,11 @@ export const About = () => {
       <Heading>About</Heading>
       <Paragraph>
         I'm Bogdan Kim, an ambitious 18-year-old Front-End Developer based in
-        Kazakhstan. I'm driven by the desire to bring ideas to life and actively
+        Canada. I'm driven by the desire to bring ideas to life and actively
         seek out exciting projects to broaden my skills.
       </Paragraph>
 
-      <Paragraph>
-        Currently, I'm enhancing my knowledge at Astana Polytechnic College.
-      </Paragraph>
-
-      <Paragraph>kim.bogdan0266@gmail.com</Paragraph>
+      <Paragraph>bogdankim@tutamail.com</Paragraph>
     </AboutWrapper>
   );
 };

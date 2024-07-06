@@ -17,7 +17,7 @@ export const Footer = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const onInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setInputField((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -33,7 +33,6 @@ export const Footer = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
           setInputField({ from_name: "", email: "", message: "" });
           setIsLoading(() => false);
           alert("Email sent successfully!");
@@ -41,15 +40,12 @@ export const Footer = () => {
         () => {
           setIsLoading(() => false);
           alert("There was an error sending the email");
-        }
+        },
       );
   };
   return (
     <>
-      <FooterWrapper
-        id="contact"
-        onSubmit={sendEmail}
-      >
+      <FooterWrapper id="contact" onSubmit={sendEmail}>
         <AppContentWrapper>
           <Info>
             <Heading>Contact</Heading>
@@ -61,7 +57,7 @@ export const Footer = () => {
               <br />
               Or, alternatively, contact me via:
               <br />
-              Email: kim.bogdan0266@gmail.com
+              Email: bogdankim@tutamail.com
               <br />
               Telegram: @bogkim
             </Paragraph>
@@ -103,10 +99,7 @@ export const Footer = () => {
             </Button>
           </Form>
         </AppContentWrapper>
-        <Header
-          navLabel="footer nav"
-          header={false}
-        />
+        <Header navLabel="footer nav" header={false} />
       </FooterWrapper>
     </>
   );
