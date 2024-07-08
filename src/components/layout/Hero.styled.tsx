@@ -5,16 +5,7 @@ import { motion } from "framer-motion";
 export const Hero = () => {
   const child = {
     initial: { opacity: 0, x: -50 },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        duration: 0.35,
-        stiffness: 25,
-        damping: 10,
-      },
-    },
+    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   const parent = {
@@ -30,7 +21,11 @@ export const Hero = () => {
 
   return (
     <AppContentWrapper>
-      <HeroWrapper variants={parent} initial="initial" animate="animate">
+      <HeroWrapper
+        variants={parent}
+        initial="initial"
+        animate="animate"
+      >
         <Role variants={child}>Front-End developer</Role>
         <Name variants={child}>Bogdan Kim</Name>
         <Description variants={child}>

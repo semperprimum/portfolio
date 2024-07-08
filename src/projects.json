@@ -1,20 +1,5 @@
 [
   {
-    "id": 0,
-    "name": "Devlinks",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Go",
-      "Pinia",
-      "API"
-    ],
-    "preview": "#",
-    "code": "#",
-    "image": "portfolio/devlinks",
-    "description": "A fully-functional link-sharing app for developers. Built with Vue.js on the front-end and Go on the back-end"
-  },
-  {
     "id": 1,
     "name": "Dictionary web app",
     "technologies": [
