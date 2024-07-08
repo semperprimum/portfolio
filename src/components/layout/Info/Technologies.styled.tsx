@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SiTypescript, SiRedux, SiTailwindcss } from "react-icons/si";
-import { FaReact, FaSass, FaVuejs } from "react-icons/fa";
+import { FaReact, FaSass, FaVuejs, FaGolang } from "react-icons/fa6";
 import { FiFramer } from "react-icons/fi";
 import { Heading } from "../..";
 import { motion } from "framer-motion";
@@ -16,7 +16,11 @@ const technologies: { name: string; icon: React.ReactNode }[] = [
   },
   {
     name: "Vue.js",
-    icon: <FaVuejs style={{ color: "#42b883" }} />
+    icon: <FaVuejs style={{ color: "#42b883" }} />,
+  },
+  {
+    name: "Golang",
+    icon: <FaGolang style={{ color: "#00ADD8" }} />,
   },
   {
     name: "Sass",
@@ -39,7 +43,17 @@ const technologies: { name: string; icon: React.ReactNode }[] = [
 export const Technologies = () => {
   const child = {
     initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        duration: 0.5,
+        damping: 25,
+        mass: 0.5,
+        stiffness : 75, 
+      },
+    },
   };
 
   const parent = {
@@ -63,10 +77,7 @@ export const Technologies = () => {
         viewport={{ once: true }}
       >
         {technologies.map((technology, index) => (
-          <Technology
-            variants={child}
-            key={index}
-          >
+          <Technology variants={child} key={index}>
             <TechnologyIconWrapper aria-hidden="true">
               {technology.icon}
             </TechnologyIconWrapper>

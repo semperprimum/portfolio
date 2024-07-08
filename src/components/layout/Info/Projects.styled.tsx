@@ -6,7 +6,11 @@ import { motion } from "framer-motion";
 export const Projects = () => {
   const child = {
     initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", duration: 0.5, stiffness: 75 },
+    },
   };
 
   const parent = {
@@ -45,11 +49,7 @@ export const Projects = () => {
         viewport={{ once: true }}
       >
         {projects.map((project) => (
-          <ProjectCard
-            variants={child}
-            key={project.id}
-            project={project}
-          />
+          <ProjectCard variants={child} key={project.id} project={project} />
         ))}
       </ProjectCardWrapper>
 
