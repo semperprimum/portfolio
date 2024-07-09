@@ -12,6 +12,7 @@ interface ProjectCardProps {
     code: string;
     technologies: string[];
     image: string;
+    description?: string;
   };
   variants: {
     initial: { opacity: number; x: number };
@@ -31,24 +32,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   return (
     <ProjectCardWrapper variants={props.variants}>
       <ImageWrapper>
-        <Image
-          src={url}
-          alt={props.project.name}
-        />
+        <Image src={url} alt={props.project.name} />
 
         {!isMobile && (
           <ButtonContainer>
-            <Button
-              as={"a"}
-              href={props.project.preview}
-            >
+            <Button as={"a"} href={props.project.preview}>
               Live Preview
             </Button>
-            <Button
-              $secondary
-              as={"a"}
-              href={props.project.code}
-            >
+            <Button $secondary as={"a"} href={props.project.code}>
               View Code
             </Button>
           </ButtonContainer>
@@ -56,6 +47,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
       </ImageWrapper>
 
       <ProjectName>{props.project.name}</ProjectName>
+
+      {props.project.description && (
+        <Description>{props.project.description}</Description>
+      )}
 
       <TechnologyList>
         {props.project.technologies.map((technology, index) => (
@@ -65,17 +60,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 
       {isMobile && (
         <ButtonContainer>
-          <Button
-            as={"a"}
-            href={props.project.preview}
-          >
+          <Button as={"a"} href={props.project.preview}>
             Live Preview
           </Button>
-          <Button
-            $secondary
-            as={"a"}
-            href={props.project.code}
-          >
+          <Button $secondary as={"a"} href={props.project.code}>
             View Code
           </Button>
         </ButtonContainer>
@@ -84,7 +72,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   );
 };
 
-const ProjectCardWrapper = styled(motion.div)``;
+const ProjectCardWrapper = styled(motion.div)`
+  @media only screen and (min-width: 48em) {
+    &:first-child {
+      grid-column: span 2;
+    }
+  }
+`;
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -143,6 +137,12 @@ const TechnologyList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+`;
+
+const Description = styled.p`
+  font-size: var(--fs-100);
+  color: ${(props) => props.theme.textSecondary};
+  margin-bottom: 0.75rem;
 `;
 
 const Technology = styled.li`
