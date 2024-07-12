@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { AppContentWrapper, Switch } from "..";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiFrontendmentor } from "react-icons/si";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -38,10 +38,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
 
           <ul>
             <li>
-              <a
-                aria-label="github"
-                href="https://github.com/semperprimum"
-              >
+              <a aria-label="github" href="https://github.com/semperprimum">
                 <SvgWrapper aria-hidden="true">
                   <FaGithub />
                 </SvgWrapper>
@@ -54,6 +51,16 @@ export const Header: React.FC<HeaderProps> = (props) => {
               >
                 <SvgWrapper aria-hidden="true">
                   <SiFrontendmentor />
+                </SvgWrapper>
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="linkedin"
+                href="https://www.linkedin.com/in/bogdan-kim/"
+              >
+                <SvgWrapper aria-hidden="true">
+                  <FaLinkedin />
                 </SvgWrapper>
               </a>
             </li>

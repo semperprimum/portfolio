@@ -21,12 +21,8 @@ export const Hero = () => {
 
   return (
     <AppContentWrapper>
-      <HeroWrapper
-        variants={parent}
-        initial="initial"
-        animate="animate"
-      >
-        <Role variants={child}>Front-End developer</Role>
+      <HeroWrapper variants={parent} initial="initial" animate="animate">
+        <Role variants={child}>Software Developer</Role>
         <Name variants={child}>Bogdan Kim</Name>
         <Description variants={child}>
           A front-end developer, passionate about building web apps that users
