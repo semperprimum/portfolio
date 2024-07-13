@@ -57,6 +57,7 @@ const Role = styled(motion.span)`
   background: -webkit-linear-gradient(${(props) => props.theme.gradient});
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  max-width: fit-content;
 `;
 
 const Name = styled(motion.h1)`
