@@ -25,7 +25,7 @@ export const Hero = () => {
         <Role variants={child}>Software Developer</Role>
         <Name variants={child}>Bogdan Kim</Name>
         <Description variants={child}>
-          A front-end developer, passionate about building web apps that users
+          A software developer, passionate about building web apps that users
           love.
         </Description>
         <Button
