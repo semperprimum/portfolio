@@ -57,7 +57,7 @@ export const Footer = () => {
               <br />
               Or, alternatively, contact me via:
               <br />
-              Email: bogdankim@tutamail.com
+              Email: <a href="mailto:bogdan@thekim.ca">bogdan@thekim.ca</a>
               <br />
               Telegram: @bogkim
             </Paragraph>

@@ -16,12 +16,12 @@ export const About = () => {
     >
       <Heading>About</Heading>
       <Paragraph>
-        I'm Bogdan Kim, an ambitious 18-year-old Software Developer Developer
+        I'm Bogdan Kim, an ambitious 19-year-old Software Developer Developer
         based in Toronto, Canada. I'm driven by the desire to bring ideas to
         life and actively seek out exciting projects to broaden my skills.
       </Paragraph>
 
-      <Paragraph>bogdankim@tutamail.com</Paragraph>
+      <Paragraph><a href="mailto:bogdan@thekim.ca">bogdan@thekim.ca</a></Paragraph>
     </AboutWrapper>
   );
 };
