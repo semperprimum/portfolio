@@ -4,6 +4,7 @@ import { FaReact, FaSass, FaVuejs, FaGolang } from "react-icons/fa6";
 import { FiFramer } from "react-icons/fi";
 import { Heading } from "../..";
 import { motion } from "framer-motion";
+import { FaNodeJs } from "react-icons/fa";
 
 const technologies: { name: string; icon: React.ReactNode }[] = [
   {
@@ -21,6 +22,10 @@ const technologies: { name: string; icon: React.ReactNode }[] = [
   {
     name: "Golang",
     icon: <FaGolang style={{ color: "#00ADD8" }} />,
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs style={{ color: "#339933" }} />
   },
   {
     name: "Sass",
