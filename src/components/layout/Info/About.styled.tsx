@@ -14,11 +14,18 @@ export const About = () => {
       viewport={{ once: true }}
       id="about"
     >
-      <Heading>About</Heading>
+      <Heading>About Me</Heading>
       <Paragraph>
-        I'm Bogdan Kim, an ambitious 19-year-old Software Developer
-        based in Toronto, Canada. I'm driven by the desire to bring ideas to
-        life and actively seek out exciting projects to broaden my skills.
+        My love for coding started at age 14, sparked by a single online game’s community that needed to automate some tedious mechanics. I was wondering if I could help, and stumbled upon AHK—a Windows scripting language I barely understood—and pieced together scripts in Notepad++. Within a week, more than 50 players were using what I had built. Witnessing something I made simplify lives and bring genuine value—well, that’s what truly drives me; it lit a spark in me.
+      </Paragraph>
+
+      <Paragraph>By 15, I was learning Python basics, playing around with Linux on virtual machines, and taking Udemy courses to sharpen my skills. Later, I got into a good college, majored in Software Engineering and explored a wide range of technologies and programming career paths, graduating with honors and among the top students.
+      </Paragraph>
+
+      <Paragraph>Today, based in Toronto, I can proudly call myself a full-stack developer with hands-on experience in production-grade projects. I am keenly interested in continuous learning, staying ahead in the current tech trends, and refinement of best practices. I am excited to join a wonderful team where I can get a scope to contribute to meaningful projects, keep growing, and make my potential impact.
+      </Paragraph>
+
+      <Paragraph>Fast-paced environments like startups and new ventures don’t scare me—they motivate and excite me.
       </Paragraph>
 
       <Paragraph><a href="mailto:bogdan@thekim.ca">bogdan@thekim.ca</a></Paragraph>
