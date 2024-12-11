@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
           <ul aria-label="navigation">
             <li>
               <a href="#about">
-                <span>About</span>
+                <span>About Me</span>
               </a>
             </li>
             <li>
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
             </li>
             <li>
               <Switch
-                onChange={themeContext?.toggleTheme ?? (() => {})}
+                onChange={themeContext?.toggleTheme ?? (() => { })}
                 checked={themeContext?.currentTheme === "dark"}
               />
             </li>
